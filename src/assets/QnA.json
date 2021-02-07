@@ -1,0 +1,47 @@
+[
+  {
+    "Id": "1",
+    "question": "Who is Prime Minister of India?",
+    "A": "Mr. Narendra Modi",
+    "B": "Dr. Manmohn Singh",
+    "C": "Atal Bihari Vajpayee",
+    "D": "Amit Shah",
+    "answer": "A"
+  },
+  {
+    "Id": "2",
+    "question": "What is financial  captial of India?",
+    "A": "Delhi",
+    "B": "Mumbai",
+    "C": "Nagpur",
+    "D": "Banglore",
+    "answer": "B"
+  },
+  {
+    "Id": "3",
+    "question": "what is national animal of india?",
+    "A": "Dog",
+    "B": "Cheeta",
+    "C": "Tiger",
+    "D": "Cow",
+    "answer": "C"
+  },
+  {
+    "Id": "4",
+    "question": "what is national bird of india?",
+    "A": "Eagle",
+    "B": "Falcon",
+    "C": "Crow",
+    "D": "Peacock",
+    "answer": "D"
+  },
+  {
+    "Id": "5",
+    "question": "when the first world war started?",
+    "A": "23 July 1914",
+    "B": "27 July 1914",
+    "C": "28 July 1914",
+    "D": "30 July 1914",
+    "answer": "C"
+  }
+]
