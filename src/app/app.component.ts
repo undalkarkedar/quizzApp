@@ -1,5 +1,5 @@
 import { DataService } from './data.service';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {
   FormBuilder,
@@ -54,9 +54,7 @@ export class AppComponent implements OnInit {
     if (this.QnAForm.invalid) return;
     for (const key in this.QnAForm.controls) {
       const value = this.QnAForm.controls[key].value;
-      console.log(key, value);
     }
-    console.log(this.answerById);
     const controls = Object.keys(this.QnAForm.controls);
     this.correctAnswer = [];
     this.wrongAnswer = [];
@@ -70,13 +68,10 @@ export class AppComponent implements OnInit {
       }
     }
 
-    console.log('correct:', this.correctAnswer);
-    console.log('wrong:', this.wrongAnswer);
     this.isShowChart = true;
     if (this.isShowChart) {
-      this.StatusGraph()
+      this.StatusGraph();
     }
-  
   }
   StatusGraph() {
     this.barChartOptions = this.ChartOptions = {
@@ -89,7 +84,7 @@ export class AppComponent implements OnInit {
 
     this.barChartData = this.ChartDataSets = [
       { data: [this.correctAnswer.length], label: 'Correct Answer' },
-      { data: [1,2,3,4], label: 'Wrong Answer' },
+      { data: [this.wrongAnswer.length], label: 'Wrong Answer' },
     ];
   }
   Clear() {
