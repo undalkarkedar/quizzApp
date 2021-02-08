@@ -79,11 +79,11 @@
     </div>
   </form>
   <div *ngIf="isShowChart">
-    <h3>Correct Answer : {{ correctAnswer.length }}</h3>
-    <h3>Wrong Answer : {{ wrongAnswer.length }}</h3>
+    <h3>Correct Answer : {{ correctAnswer.length }}/5</h3>
+    <h3>Wrong Answer : {{ wrongAnswer.length }}/5</h3>
   </div>
 </div>
-<div class="chart" >
+<div class="chart" *ngIf="isShowChart" >
   <canvas
     baseChart
     [datasets]="barChartData"
