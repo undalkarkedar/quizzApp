@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
   }
   Submit() {
     this.isSubmitted = true;
-    console.log(this.QnAForm);
+
     if (this.QnAForm.invalid) return;
     for (const key in this.QnAForm.controls) {
       const value = this.QnAForm.controls[key].value;
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit {
     this.wrongAnswer = [];
     for (const key of controls) {
       const a = this.QnAForm.get(key);
-      console.log(a.value, key);
+
       if (this.answerById[key] == a.value) {
         this.correctAnswer.push(key);
       } else {
