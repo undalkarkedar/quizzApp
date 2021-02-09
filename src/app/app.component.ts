@@ -50,7 +50,6 @@ export class AppComponent implements OnInit {
   }
   Submit() {
     this.isSubmitted = true;
-
     if (this.QnAForm.invalid) return;
     for (const key in this.QnAForm.controls) {
       const value = this.QnAForm.controls[key].value;
