@@ -1,0 +1,97 @@
+<div class="container">
+  <form [formGroup]="QnAForm" (ngSubmit)="Submit()">
+    <div class="card border-primary" *ngFor="let data of QnA_Array">
+      <h3
+        class="card-header"
+        [ngClass]="{
+          'bg-yellow': isSubmitted && !QnAForm.value[data.Id],
+          'bg-red': isSubmitted && wrongAnswer.indexOf(data.Id) != -1
+        }"
+      >
+        {{ data.Id }}
+        {{ data.question }}
+      </h3>
+
+      <div class="row">
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              [name]="data.Id"
+              [value]="data.A"
+              [formControlName]="data.Id"
+            />
+            <label class="form-check-label" for="inlineRadio1"
+              >A. {{ data.A }}</label
+            >
+          </div>
+        </div>
+        <div class="col">
+          <input
+            class="form-check-input"
+            type="radio"
+            [name]="data.Id"
+            [value]="data.B"
+            [formControlName]="data.Id"
+          />
+          <label class="form-check-label" for="inlineRadio1"
+            >B. {{ data.B }}</label
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              [name]="data.Id"
+              [formControlName]="data.Id"
+              [value]="data.C"
+            />
+            <label class="form-check-label" for="inlineRadio1">
+              C. {{ data.C }}</label
+            >
+          </div>
+        </div>
+        <div class="col">
+          <input
+            class="form-check-input"
+            type="radio"
+            [name]="data.Id"
+            [formControlName]="data.Id"
+            [value]="data.D"
+          />
+          <label class="form-check-label" for="inlineRadio1">
+            D. {{ data.D }}</label
+          >
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-success" type="submit">Submit</button> &nbsp;
+        <button class="btn btn-primary" type="reset" (click)="Clear()">
+          Clear
+        </button>
+      </div>
+    </div>
+  </form>
+  <div *ngIf="isShowChart">
+    <h3>Correct Answer : {{ correctAnswer.length }}/5</h3>
+    <h3>Wrong Answer : {{ wrongAnswer.length }}/5</h3>
+  </div>
+</div>
+<div class="chart" *ngIf="isShowChart" >
+  <canvas
+    baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType"
+  >
+  </canvas>
+</div>

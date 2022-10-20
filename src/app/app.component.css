@@ -1,0 +1,17 @@
+.card {
+  height: auto;
+  width: auto;
+  max-width: auto;
+  max-height: auto;
+  top: 5px;
+  margin-bottom: 10px;
+}
+.card-header {
+  padding: 0;
+}
+.bg-red {
+  background: red;
+}
+.bg-yellow {
+  background: yellow;
+}
